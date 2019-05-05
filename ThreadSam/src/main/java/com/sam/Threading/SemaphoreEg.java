@@ -5,6 +5,10 @@ import java.util.Set;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
+/*
+ * Object Pool 
+ */
+
 public class SemaphoreEg {
 	
 	private Set<Object>  set = new HashSet <Object>();
