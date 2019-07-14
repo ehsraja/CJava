@@ -33,6 +33,7 @@ public class SamBarrier implements  Runnable {
 		thread3.start();
 		thread4.start();
 		thread5.start();
+		System.out.println("Ending");
 	}
 	
 	
