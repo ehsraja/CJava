@@ -47,7 +47,7 @@ public class ExecutorServiceEg {
 		}
 		
 		for(Future fut : list){
-			System.out.println(fut.get());
+		//	System.out.println(fut.get());
 		}
 		long endTime = Calendar.getInstance().getTimeInMillis();
 		System.out.println("Total time " + (endTime-startTime));
