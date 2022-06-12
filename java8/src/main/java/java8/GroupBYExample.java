@@ -2,6 +2,7 @@ package java8;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -19,9 +20,23 @@ public class GroupBYExample {
 		      new Employee("Frank Anthony", 55, 32000.00, Department.MARKETING),
 		      new Employee("Michael Reeves", 40, 45000.00, Department.OPERATIONS));
 	
+	
+	public static double getHighetSalary(List<Employee> emps){
+	//	 return emps.stream().map(emp -> emp.getSalary()).reduce(0d,Math::max);
+		
+		 return emps.stream().map(emp -> emp.getSalary()).reduce(0d,(a,b)-> Double.max(a, b));
+	}
+	
 		  public static void main(String args[]){
 		    Map<Department,List<Employee>> employeeMap
 		        = employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment));
+		    
+		    Map<Department,Double> employeeSalaryMap =  employeeMap.keySet().stream().collect(Collectors.toMap(d -> d , d -> getHighetSalary(employeeMap.get(d))));
+		    System.out.println("Employees with highest Salary");
+		    employeeSalaryMap.forEach(( k, v) -> System.out.println(k + ":" +   v) );
+		    
+		    
+		    
 		    System.out.println("Employees grouped by department");
 		    employeeMap.forEach((Department key, List<Employee> empList) -> System.out.println(key +" -> "+empList));
 		    
@@ -29,7 +44,14 @@ public class GroupBYExample {
 	        employeeList.stream().collect(Collectors.groupingBy(Employee::getDepartment, Collectors.counting()));
 	        
 	        
-		    
+		    employeeList.stream().collect(Collectors.toMap(Employee::getDepartment,
+		    		Function.identity(),(a,b)-> {
+		    			if(a.getSalary() > b.getSalary()) {
+		    			return a ; } else {
+		    				return b ;
+		    			}
+		    		}
+		    			));
 		    
 		  
 		    List<String> items =

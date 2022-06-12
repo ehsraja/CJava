@@ -45,6 +45,14 @@ public class Streams {
          .forEach(s -> System.out.println(s));
          
          
+         memberNames.stream().filter((s) -> s.equals("Aman")).collect(Collectors.toList());
+        
+         
+         
+         
+         
+         
+         
          //Default method example 
          
          System.out.println("Infinte stream");
