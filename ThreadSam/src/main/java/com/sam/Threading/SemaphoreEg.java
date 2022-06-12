@@ -18,7 +18,8 @@ public class SemaphoreEg {
 	
 	public void put(Object obj) throws InterruptedException{
 		System.out.println("Putting :" + obj);
-		semaphore.tryAcquire(2, TimeUnit.SECONDS);
+	//	semaphore.tryAcquire(2, TimeUnit.SECONDS);
+		semaphore.acquire();
 		System.out.println(semaphore.availablePermits());
 		set.add(obj);
 		System.out.println(set.size());
@@ -38,14 +39,15 @@ public class SemaphoreEg {
 		SemaphoreEg eg = new SemaphoreEg ();
 		eg.put("Ram");
 		eg.put("Sam");
-		eg.put("Ram");
-		eg.put("Ram");
-		eg.put("Ram");
+		eg.put("Tam");
+		eg.put("Yam");
+		eg.put("Kam");
 		eg.put("Rym");
-		System.out.println(eg.size());
-		eg.get("Ram");
-		eg.get("Sam");
+		System.out.println("Size " + eg.size());
+	//	eg.get("Ram");
+	//	eg.get("Sam");
 		eg.put("Ryme");
+		System.out.println("Size " + eg.size());
 	}
 	
 }

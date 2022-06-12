@@ -12,7 +12,12 @@ public class FutureCancelExample {
 
 	        long startTime = System.nanoTime();
 	        Future<String> future = executorService.submit(() -> {
-	            Thread.sleep(2000);
+	         //   try {
+	        	Thread.sleep(2000);
+	          //  }catch(InterruptedException ex) {
+	           // 	System.out.println("Thread get interrrrupted");
+	           // }
+	            System.out.println("Can not continue");
 	            return "Hello from Callable";
 	        });
 

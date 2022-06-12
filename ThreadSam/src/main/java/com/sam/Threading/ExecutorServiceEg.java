@@ -26,7 +26,7 @@ public class ExecutorServiceEg {
 			}
 			if (x == 5){
 				System.out.println("slepping here : " + Thread.currentThread().getName() + " f("+ x + "): " + total ) ; 
-				Thread.sleep(10000);
+				Thread.sleep(1000);
 			}
 			System.out.println(Thread.currentThread().getName() + " f("+ x + "): " + total);
 		    return (" f("+ x + "): " + String.valueOf(total));
@@ -38,17 +38,31 @@ public class ExecutorServiceEg {
 	public static void main (String k []) throws InterruptedException, ExecutionException{
 	//	Thread.s
 		List <Future> list = new  LinkedList<Future> ();
+		List <fileReader> listCallable = new LinkedList<>();
 		ExecutorService ex = Executors.newFixedThreadPool(10);
 		long startTime = Calendar.getInstance().getTimeInMillis();
 		for(int i = 0 ; i <10 ; i++ ){
 			Future <String> fut = ex.submit(new fileReader(i));
 			list.add(fut);
-		//	System.out.println(fut.get());
+			//	System.out.println(fut.get());
 		}
 		
+	//	ex.invokeAll(listCallable);
+		
+	/*	for(Future fut : list){
+	//		fut.
+			System.out.println(fut.get());
+		}*/
+		
+		
+	/*	System.out.println("----------------");
+		
 		for(Future fut : list){
-		//	System.out.println(fut.get());
-		}
+			//		fut.
+					System.out.println(fut.get());
+				}*/
+
+		
 		long endTime = Calendar.getInstance().getTimeInMillis();
 		System.out.println("Total time " + (endTime-startTime));
 		
