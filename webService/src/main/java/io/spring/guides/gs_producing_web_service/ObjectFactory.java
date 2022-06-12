@@ -6,7 +6,7 @@
 //
 
 
-package com.concretepage.soap;
+package io.spring.guides.gs_producing_web_service;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlRegistry;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the com.concretepage.soap package. 
+ * generated in the io.spring.guides.gs_producing_web_service package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -30,34 +30,50 @@ public class ObjectFactory {
 
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.concretepage.soap
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: io.spring.guides.gs_producing_web_service
      * 
      */
     public ObjectFactory() {
     }
 
     /**
-     * Create an instance of {@link GetStudentResponse }
+     * Create an instance of {@link GetCountryListRequest }
      * 
      */
-    public GetStudentResponse createGetStudentResponse() {
-        return new GetStudentResponse();
+    public GetCountryListRequest createGetCountryListRequest() {
+        return new GetCountryListRequest();
     }
 
     /**
-     * Create an instance of {@link Student }
+     * Create an instance of {@link GetCountryListResponse }
      * 
      */
-    public Student createStudent() {
-        return new Student();
+    public GetCountryListResponse createGetCountryListResponse() {
+        return new GetCountryListResponse();
     }
 
     /**
-     * Create an instance of {@link GetStudentRequest }
+     * Create an instance of {@link Country }
      * 
      */
-    public GetStudentRequest createGetStudentRequest() {
-        return new GetStudentRequest();
+    public Country createCountry() {
+        return new Country();
+    }
+
+    /**
+     * Create an instance of {@link GetCountryRequest }
+     * 
+     */
+    public GetCountryRequest createGetCountryRequest() {
+        return new GetCountryRequest();
+    }
+
+    /**
+     * Create an instance of {@link GetCountryResponse }
+     * 
+     */
+    public GetCountryResponse createGetCountryResponse() {
+        return new GetCountryResponse();
     }
 
 }

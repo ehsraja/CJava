@@ -5,5 +5,5 @@
 // Generated on: 2019.09.20 at 10:56:29 AM IST 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://concretepage.com/soap", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package com.concretepage.soap;
+@javax.xml.bind.annotation.XmlSchema(namespace = "http://spring.io/guides/gs-producing-web-service", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+package io.spring.guides.gs_producing_web_service;

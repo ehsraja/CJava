@@ -6,7 +6,7 @@
 //
 
 
-package com.concretepage.soap;
+package io.spring.guides.gs_producing_web_service;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="student" type="{http://concretepage.com/soap}student"/>
+ *         &lt;element name="country" type="{http://spring.io/guides/gs-producing-web-service}country"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "student"
+    "country"
 })
-@XmlRootElement(name = "getStudentResponse")
-public class GetStudentResponse {
+@XmlRootElement(name = "getCountryResponse")
+public class GetCountryResponse {
 
     @XmlElement(required = true)
-    protected Student student;
+    protected Country country;
 
     /**
-     * Gets the value of the student property.
+     * Gets the value of the country property.
      * 
      * @return
      *     possible object is
-     *     {@link Student }
+     *     {@link Country }
      *     
      */
-    public Student getStudent() {
-        return student;
+    public Country getCountry() {
+        return country;
     }
 
     /**
-     * Sets the value of the student property.
+     * Sets the value of the country property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Student }
+     *     {@link Country }
      *     
      */
-    public void setStudent(Student value) {
-        this.student = value;
+    public void setCountry(Country value) {
+        this.country = value;
     }
 
 }
