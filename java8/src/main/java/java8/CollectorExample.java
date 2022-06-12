@@ -21,8 +21,8 @@ class CollectorExample {
 		freq.put("343", 8L);
 		freq.put("er", 34L);
 		freq.put("df", 33L);
-		freq.put("d", 40L);
-		freq.put("343", 28L);
+	//	freq.put("d", 40L);
+//		freq.put("343", 28L);
 	  
 		System.out.println("Hello");
 		List<String> topTen = freq.keySet().stream()
@@ -32,6 +32,14 @@ class CollectorExample {
 		System.out.println("end");
 		System.out.println(topTen);
 		System.out.println("world");
+		
+		List<String> top = freq.keySet().stream()
+				.sorted(Comparator.comparing(k -> k))
+			//	.limit(4)
+				.collect(Collectors.toList());
+		
+		System.out.println(top);
+		
 		
 		
 		List<String> list = new ArrayList<>();

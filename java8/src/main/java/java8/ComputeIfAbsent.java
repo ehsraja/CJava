@@ -32,10 +32,17 @@ public class ComputeIfAbsent {
 	 List<String> l3 =  map.computeIfAbsent("Ram", (unused) -> new LinkedList<>());
 	l3.add(str);
 	// 
-	l1.forEach(System.out::println);
+//	l1.forEach(System.out::println);
 	l3.forEach(System.out::println);
 	
-	
+	 List<String> l4 =  map.computeIfAbsent("Dam", (unused) -> new LinkedList<>());
+     l4.add("s");
+     System.out.println("-------------");
+     System.out.println(l4);
+     System.out.println(map.get("Dam"));
+     map.computeIfAbsent("Tam", (s) -> new LinkedList<>()).add("dfdsf");
+     map.computeIfAbsent("Tam", (s) -> new LinkedList<>()).add("dd");
+     System.out.println(map.get("Tam"));
 }	
 
 }
